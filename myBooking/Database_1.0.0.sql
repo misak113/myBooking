@@ -1,57 +1,88 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     7.9.2012 10:24:36                            */
+/* Created on:     7.9.2012 10:55:25                            */
 /*==============================================================*/
 
 
-drop table if exists authorization_role;
+drop index Index_id_goods on goods;
 
 drop table if exists goods;
 
+drop index Index_id_goods_used_item on goods_used_item;
+
 drop table if exists goods_used_item;
+
+drop index Index_id_hotel on hotel;
 
 drop table if exists hotel;
 
+drop index id_invoice on invoice;
+
 drop table if exists invoice;
+
+drop index Index_id_invoice_item on invoice_item;
 
 drop table if exists invoice_item;
 
+drop index Index_id_payment on payment;
+
 drop table if exists payment;
+
+drop index Index_id_payment_type on payment_type;
 
 drop table if exists payment_type;
 
+drop index Index_id_permission on permission;
+
 drop table if exists permission;
+
+drop index Index_id_person on person;
 
 drop table if exists person;
 
+drop index Index_id_person_account on person_account;
+
 drop table if exists person_account;
+
+drop index Index_id_person_account_has_room on person_account_has_room;
 
 drop table if exists person_account_has_room;
 
+drop index Index_id_price_category on price_category;
+
 drop table if exists price_category;
+
+drop index Index_id_provider on provider;
 
 drop table if exists provider;
 
+drop index Index_id_reservation on reservation;
+
 drop table if exists reservation;
+
+drop index Index_id_reservation_has_room on reservation_has_room;
 
 drop table if exists reservation_has_room;
 
+drop index Index_id_role on role;
+
+drop table if exists role;
+
+drop index Index_id_has_permission on role_has_permission;
+
+drop table if exists role_has_permission;
+
+drop index Index_id_room on room;
+
 drop table if exists room;
+
+drop index Index_id_room_photo on room_photo;
 
 drop table if exists room_photo;
 
-drop table if exists user;
+drop index Index_id_user on user;
 
-/*==============================================================*/
-/* Table: authorization_role                                    */
-/*==============================================================*/
-create table authorization_role
-(
-   id_role              int not null auto_increment,
-   id_permission        int not null,
-   name                 varchar(30) not null,
-   primary key (id_role)
-);
+drop table if exists user;
 
 /*==============================================================*/
 /* Table: goods                                                 */
@@ -65,6 +96,14 @@ create table goods
    buyable              bool not null,
    global               bool not null,
    primary key (id_goods)
+);
+
+/*==============================================================*/
+/* Index: Index_id_goods                                        */
+/*==============================================================*/
+create index Index_id_goods on goods
+(
+   id_goods
 );
 
 /*==============================================================*/
@@ -84,6 +123,14 @@ create table goods_used_item
 );
 
 /*==============================================================*/
+/* Index: Index_id_goods_used_item                              */
+/*==============================================================*/
+create index Index_id_goods_used_item on goods_used_item
+(
+   id_goods_used_item
+);
+
+/*==============================================================*/
 /* Table: hotel                                                 */
 /*==============================================================*/
 create table hotel
@@ -94,6 +141,14 @@ create table hotel
    address              varchar(100) not null,
    description          text,
    primary key (id_hotel)
+);
+
+/*==============================================================*/
+/* Index: Index_id_hotel                                        */
+/*==============================================================*/
+create index Index_id_hotel on hotel
+(
+   id_hotel
 );
 
 /*==============================================================*/
@@ -113,6 +168,14 @@ create table invoice
 );
 
 /*==============================================================*/
+/* Index: id_invoice                                            */
+/*==============================================================*/
+create index id_invoice on invoice
+(
+   id_invoice
+);
+
+/*==============================================================*/
 /* Table: invoice_item                                          */
 /*==============================================================*/
 create table invoice_item
@@ -124,6 +187,14 @@ create table invoice_item
    count                int not null,
    vat                  float not null,
    primary key (id_invoice_item)
+);
+
+/*==============================================================*/
+/* Index: Index_id_invoice_item                                 */
+/*==============================================================*/
+create index Index_id_invoice_item on invoice_item
+(
+   id_invoice_item
 );
 
 /*==============================================================*/
@@ -140,6 +211,14 @@ create table payment
 );
 
 /*==============================================================*/
+/* Index: Index_id_payment                                      */
+/*==============================================================*/
+create index Index_id_payment on payment
+(
+   id_payment
+);
+
+/*==============================================================*/
 /* Table: payment_type                                          */
 /*==============================================================*/
 create table payment_type
@@ -148,6 +227,14 @@ create table payment_type
    name                 varchar(50) not null,
    price                float not null,
    primary key (id_payment_type)
+);
+
+/*==============================================================*/
+/* Index: Index_id_payment_type                                 */
+/*==============================================================*/
+create index Index_id_payment_type on payment_type
+(
+   id_payment_type
 );
 
 /*==============================================================*/
@@ -160,6 +247,14 @@ create table permission
    type                 varchar(20) not null,
    operation            varchar(20) not null,
    primary key (id_permission)
+);
+
+/*==============================================================*/
+/* Index: Index_id_permission                                   */
+/*==============================================================*/
+create index Index_id_permission on permission
+(
+   id_permission
 );
 
 /*==============================================================*/
@@ -177,6 +272,14 @@ create table person
 );
 
 /*==============================================================*/
+/* Index: Index_id_person                                       */
+/*==============================================================*/
+create index Index_id_person on person
+(
+   id_person
+);
+
+/*==============================================================*/
 /* Table: person_account                                        */
 /*==============================================================*/
 create table person_account
@@ -186,6 +289,14 @@ create table person_account
    id_reservation       int not null,
    id_person            int not null,
    primary key (id_person_account)
+);
+
+/*==============================================================*/
+/* Index: Index_id_person_account                               */
+/*==============================================================*/
+create index Index_id_person_account on person_account
+(
+   id_person_account
 );
 
 /*==============================================================*/
@@ -203,6 +314,15 @@ create table person_account_has_room
 alter table person_account_has_room comment 'Účet je vázán na pokoj';
 
 /*==============================================================*/
+/* Index: Index_id_person_account_has_room                      */
+/*==============================================================*/
+create index Index_id_person_account_has_room on person_account_has_room
+(
+   id_room,
+   id_person_account
+);
+
+/*==============================================================*/
 /* Table: price_category                                        */
 /*==============================================================*/
 create table price_category
@@ -217,14 +337,30 @@ create table price_category
 );
 
 /*==============================================================*/
+/* Index: Index_id_price_category                               */
+/*==============================================================*/
+create index Index_id_price_category on price_category
+(
+   id_price_category
+);
+
+/*==============================================================*/
 /* Table: provider                                              */
 /*==============================================================*/
 create table provider
 (
-   id_provide           int not null auto_increment,
+   id_provider          int not null auto_increment,
    name                 varchar(50) not null,
    ico                  varchar(20) not null,
-   primary key (id_provide)
+   primary key (id_provider)
+);
+
+/*==============================================================*/
+/* Index: Index_id_provider                                     */
+/*==============================================================*/
+create index Index_id_provider on provider
+(
+   id_provider
 );
 
 /*==============================================================*/
@@ -234,6 +370,14 @@ create table reservation
 (
    id_reservation       int not null auto_increment,
    primary key (id_reservation)
+);
+
+/*==============================================================*/
+/* Index: Index_id_reservation                                  */
+/*==============================================================*/
+create index Index_id_reservation on reservation
+(
+   id_reservation
 );
 
 /*==============================================================*/
@@ -248,6 +392,52 @@ create table reservation_has_room
    count_persons        int not null,
    count_childs         int not null,
    primary key (id_room, id_reservation)
+);
+
+/*==============================================================*/
+/* Index: Index_id_reservation_has_room                         */
+/*==============================================================*/
+create index Index_id_reservation_has_room on reservation_has_room
+(
+   id_room,
+   id_reservation
+);
+
+/*==============================================================*/
+/* Table: role                                                  */
+/*==============================================================*/
+create table role
+(
+   id_role              int not null auto_increment,
+   name                 varchar(30) not null,
+   primary key (id_role)
+);
+
+/*==============================================================*/
+/* Index: Index_id_role                                         */
+/*==============================================================*/
+create index Index_id_role on role
+(
+   id_role
+);
+
+/*==============================================================*/
+/* Table: role_has_permission                                   */
+/*==============================================================*/
+create table role_has_permission
+(
+   id_role              int not null,
+   id_permission        int not null,
+   primary key (id_role, id_permission)
+);
+
+/*==============================================================*/
+/* Index: Index_id_has_permission                               */
+/*==============================================================*/
+create index Index_id_has_permission on role_has_permission
+(
+   id_role,
+   id_permission
 );
 
 /*==============================================================*/
@@ -266,6 +456,14 @@ create table room
 );
 
 /*==============================================================*/
+/* Index: Index_id_room                                         */
+/*==============================================================*/
+create index Index_id_room on room
+(
+   id_room
+);
+
+/*==============================================================*/
 /* Table: room_photo                                            */
 /*==============================================================*/
 create table room_photo
@@ -275,6 +473,14 @@ create table room_photo
    date_created         datetime not null,
    active               bool not null,
    primary key (id_room_photo)
+);
+
+/*==============================================================*/
+/* Index: Index_id_room_photo                                   */
+/*==============================================================*/
+create index Index_id_room_photo on room_photo
+(
+   id_room_photo
 );
 
 /*==============================================================*/
@@ -292,8 +498,13 @@ create table user
    primary key (id_user)
 );
 
-alter table authorization_role add constraint `FK_Role má práva` foreign key (id_permission)
-      references permission (id_permission) on delete restrict on update restrict;
+/*==============================================================*/
+/* Index: Index_id_user                                         */
+/*==============================================================*/
+create index Index_id_user on user
+(
+   id_user
+);
 
 alter table goods_used_item add constraint `FK_Do platby zaúčtována položka zboží` foreign key (id_payment)
       references payment (id_payment) on delete restrict on update restrict;
@@ -308,7 +519,7 @@ alter table goods_used_item add constraint `FK_Zboží je vázáno k použité p
       references goods (id_goods) on delete restrict on update restrict;
 
 alter table hotel add constraint `FK_Hotel provozuje provozovatel` foreign key (id_provide)
-      references provider (id_provide) on delete restrict on update restrict;
+      references provider (id_provider) on delete restrict on update restrict;
 
 alter table invoice add constraint `FK_Faktura výchází z platby` foreign key (id_payment)
       references payment (id_payment) on delete restrict on update restrict;
@@ -346,6 +557,12 @@ alter table reservation_has_room add constraint FK_Relationship_21 foreign key (
 alter table reservation_has_room add constraint FK_Relationship_22 foreign key (id_room)
       references room (id_room) on delete restrict on update restrict;
 
+alter table role_has_permission add constraint FK_Reference_21 foreign key (id_role)
+      references role (id_role) on delete restrict on update restrict;
+
+alter table role_has_permission add constraint FK_Reference_22 foreign key (id_permission)
+      references permission (id_permission) on delete restrict on update restrict;
+
 alter table room add constraint `FK_Pokoj je v hotelu` foreign key (id_hotel)
       references hotel (id_hotel) on delete restrict on update restrict;
 
@@ -353,5 +570,5 @@ alter table room_photo add constraint `FK_Fotky pokoje` foreign key (id_room)
       references room (id_room) on delete restrict on update restrict;
 
 alter table user add constraint `FK_Uživatel je v roli` foreign key (id_role)
-      references authorization_role (id_role) on delete restrict on update restrict;
+      references role (id_role) on delete restrict on update restrict;
 
