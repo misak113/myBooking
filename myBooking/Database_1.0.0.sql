@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     7.9.2012 1:15:09                             */
+/* Created on:     7.9.2012 10:24:36                            */
 /*==============================================================*/
 
 
@@ -47,7 +47,7 @@ drop table if exists user;
 /*==============================================================*/
 create table authorization_role
 (
-   id_role              int not null,
+   id_role              int not null auto_increment,
    id_permission        int not null,
    name                 varchar(30) not null,
    primary key (id_role)
@@ -58,7 +58,7 @@ create table authorization_role
 /*==============================================================*/
 create table goods
 (
-   id_goods             int not null,
+   id_goods             int not null auto_increment,
    name                 varchar(100) not null,
    price                float not null,
    date_changed         datetime not null,
@@ -72,7 +72,7 @@ create table goods
 /*==============================================================*/
 create table goods_used_item
 (
-   id_goods_used_item   int not null,
+   id_goods_used_item   int not null auto_increment,
    id_reservation       int not null,
    id_payment           int,
    id_goods             int not null,
@@ -88,7 +88,7 @@ create table goods_used_item
 /*==============================================================*/
 create table hotel
 (
-   id_hotel             int not null,
+   id_hotel             int not null auto_increment,
    id_provide           int not null,
    name                 varchar(20) not null,
    address              varchar(100) not null,
@@ -101,7 +101,7 @@ create table hotel
 /*==============================================================*/
 create table invoice
 (
-   id_invoice           int not null,
+   id_invoice           int not null auto_increment,
    id_payment           int not null,
    name                 varchar(50) not null,
    address              varchar(100) not null,
@@ -117,7 +117,7 @@ create table invoice
 /*==============================================================*/
 create table invoice_item
 (
-   id_invoice_item      int not null,
+   id_invoice_item      int not null auto_increment,
    id_invoice           int not null,
    name                 varchar(50) not null,
    price                float not null,
@@ -131,7 +131,7 @@ create table invoice_item
 /*==============================================================*/
 create table payment
 (
-   id_payment           int not null,
+   id_payment           int not null auto_increment,
    id_payment_type      int not null,
    id_person            int not null,
    date_created         datetime not null,
@@ -144,7 +144,7 @@ create table payment
 /*==============================================================*/
 create table payment_type
 (
-   id_payment_type      int not null,
+   id_payment_type      int not null auto_increment,
    name                 varchar(50) not null,
    price                float not null,
    primary key (id_payment_type)
@@ -155,7 +155,7 @@ create table payment_type
 /*==============================================================*/
 create table permission
 (
-   id_permission        int not null,
+   id_permission        int not null auto_increment,
    name                 varchar(30) not null,
    type                 varchar(20) not null,
    operation            varchar(20) not null,
@@ -167,7 +167,7 @@ create table permission
 /*==============================================================*/
 create table person
 (
-   id_person            int not null,
+   id_person            int not null auto_increment,
    name                 varchar(100) not null,
    phone                varchar(20),
    email                varchar(50),
@@ -181,7 +181,7 @@ create table person
 /*==============================================================*/
 create table person_account
 (
-   id_person_account    int not null,
+   id_person_account    int not null auto_increment,
    id_payment           int not null,
    id_reservation       int not null,
    id_person            int not null,
@@ -207,7 +207,7 @@ alter table person_account_has_room comment 'Účet je vázán na pokoj';
 /*==============================================================*/
 create table price_category
 (
-   id_price_category    int not null,
+   id_price_category    int not null auto_increment,
    id_room              int not null,
    price                float not null,
    vat                  float not null,
@@ -221,7 +221,7 @@ create table price_category
 /*==============================================================*/
 create table provider
 (
-   id_provide           int not null,
+   id_provide           int not null auto_increment,
    name                 varchar(50) not null,
    ico                  varchar(20) not null,
    primary key (id_provide)
@@ -232,7 +232,7 @@ create table provider
 /*==============================================================*/
 create table reservation
 (
-   id_reservation       int not null,
+   id_reservation       int not null auto_increment,
    primary key (id_reservation)
 );
 
@@ -255,7 +255,7 @@ create table reservation_has_room
 /*==============================================================*/
 create table room
 (
-   id_room              int not null,
+   id_room              int not null auto_increment,
    id_hotel             int not null,
    count_persons        int not null,
    count_child          int not null,
@@ -270,7 +270,7 @@ create table room
 /*==============================================================*/
 create table room_photo
 (
-   id_room_photo        int not null,
+   id_room_photo        int not null auto_increment,
    id_room              int not null,
    date_created         datetime not null,
    active               bool not null,
@@ -282,14 +282,14 @@ create table room_photo
 /*==============================================================*/
 create table user
 (
-   user_id              int not null,
+   id_user              int not null auto_increment,
    id_role              int not null,
    username             varchar(20) not null,
    authetification      varchar(128) not null,
    email                varchar(50) not null,
    first_name           varchar(30),
    last_name            varchar(30),
-   primary key (user_id)
+   primary key (id_user)
 );
 
 alter table authorization_role add constraint `FK_Role má práva` foreign key (id_permission)
