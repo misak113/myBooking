@@ -17,8 +17,16 @@ class HomepagePresenter extends BasePresenter
 		$this->template->anyVariable = 'any value';
 	}
 
+	public function renderPrepareTest() {
+		$this->testDatabase->prepareData();
+		$this->sendResponse(new \Nette\Application\Responses\TextResponse('OK'));
+		$this->sendResponse(new \Nette\Application\Responses\JsonResponse(array('status' => 'OK')));
+	}
+
 	public function renderTest() {
 		$this->testDatabase->testAccommodation();
+		$this->sendResponse(new \Nette\Application\Responses\TextResponse('OK'));
+		$this->sendResponse(new \Nette\Application\Responses\JsonResponse(array('status' => 'OK')));
 	}
 
 }

@@ -26,7 +26,7 @@
       <file leaf-file-name="HomepagePresenter.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/presenters/HomepagePresenter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="34" selection-start="386" selection-end="386" vertical-scroll-proportion="-13.076923">
+            <state line="28" column="8" selection-start="732" selection-end="732" vertical-scroll-proportion="-18.307692">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,16 @@
       <file leaf-file-name="TestDatabase.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/model/TestDatabase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="64" selection-start="1798" selection-end="1798" vertical-scroll-proportion="1.2568922">
+            <state line="60" column="59" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.9586877">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/bootstrap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="35" selection-start="220" selection-end="220" vertical-scroll-proportion="-5.8846154">
               <folding />
             </state>
           </provider>
@@ -60,9 +69,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
         <option value="$PROJECT_DIR$/app/config/config.neon" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/shortcuts.php" />
+        <option value="$PROJECT_DIR$/app/bootstrap.php" />
+        <option value="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
         <option value="$PROJECT_DIR$/app/model/TestDatabase.php" />
       </list>
     </option>
@@ -73,6 +84,40 @@
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1034" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Naming conventionsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CSS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -192,8 +237,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../allin1/zapakatel" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig" serverName="localhost.mybooking.cz" serverId="bd8f0ed0-10b5-49ca-abba-b62fcbf7805f">
     <servers>
@@ -230,6 +279,24 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c7a18981-bc84-43a0-9d1a-9e8ccc735189" name="Default" comment="" />
@@ -333,13 +400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/HomepagePresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="34" selection-start="386" selection-end="386" vertical-scroll-proportion="-13.076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.neon">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="59" selection-start="506" selection-end="506" vertical-scroll-proportion="0.0">
@@ -347,9 +407,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/shortcuts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="1319" selection-end="1319" vertical-scroll-proportion="1.507898">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="220" selection-end="220" vertical-scroll-proportion="-5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/HomepagePresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="8" selection-start="732" selection-end="732" vertical-scroll-proportion="-18.307692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/TestDatabase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="64" selection-start="1798" selection-end="1798" vertical-scroll-proportion="1.2568922">
+        <state line="60" column="59" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.9586877">
           <folding />
         </state>
       </provider>
