@@ -44,7 +44,7 @@
       <file leaf-file-name="TestDatabase.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/model/TestDatabase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="68" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.63909775">
+            <state line="83" column="64" selection-start="1798" selection-end="1798" vertical-scroll-proportion="1.2568922">
               <folding />
             </state>
           </provider>
@@ -60,10 +60,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/model/TestDatabase.php" />
         <option value="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
         <option value="$PROJECT_DIR$/app/config/config.neon" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/model/TestDatabase.php" />
       </list>
     </option>
   </component>
@@ -347,16 +347,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="23" selection-end="23" vertical-scroll-proportion="0.040047113">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/TestDatabase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="68" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.63909775">
+        <state line="83" column="64" selection-start="1798" selection-end="1798" vertical-scroll-proportion="1.2568922">
           <folding />
         </state>
       </provider>

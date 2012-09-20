@@ -81,7 +81,7 @@ class TestDatabase
 
 	}
 
-	public function createPersonAccount($payment, $reservation, $person) {
+	public function createPersonAccount($payment, $accommodation, $person) {
 
 	}
 
