@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     19.9.2012 22:42:41                           */
+/* Created on:     20.9.2012 15:18:24                           */
 /*==============================================================*/
 
 
@@ -230,7 +230,7 @@ create index Index_id_goods_used_item on goods_used_item
 create table hotel
 (
    id_hotel             int not null auto_increment,
-   id_provide           int not null,
+   id_provider          int not null,
    name                 varchar(20) not null,
    address              varchar(100) not null,
    description          text,
@@ -604,7 +604,7 @@ alter table goods_used_item add constraint `FK_Použitá položka zboží v rám
 alter table goods_used_item add constraint `FK_Zboží je vázáno k použité položce` foreign key (id_goods)
       references goods (id_goods) on delete restrict on update restrict;
 
-alter table hotel add constraint `FK_Hotel provozuje provozovatel` foreign key (id_provide)
+alter table hotel add constraint `FK_Hotel provozuje provozovatel` foreign key (id_provider)
       references provider (id_provider) on delete restrict on update restrict;
 
 alter table invoice add constraint `FK_Faktura výchází z platby` foreign key (id_payment)
