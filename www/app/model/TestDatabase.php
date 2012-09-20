@@ -14,7 +14,7 @@ class TestDatabase
 		$this->db = $db;
 	}
 
-	public function testReservation() {
+	public function testAccommodation() {
 		$this->prepareData();
 
 		$roomsInfo = $this->getFreeRooms('', '', 4);
@@ -24,12 +24,12 @@ class TestDatabase
 		$hotel = $this->pushHotelWithProvider();
 		$paymentTypes = $this->pushPaymentTypes();
 		$rooms = $this->pushRooms(40, $hotel);
-		$reservation = $this->createReservation();
+		$accommodation = $this->createAccommodation();
 		$possibleRooms = array();
 		for ($i=0;$i < 10;$i++) {
 			$room = array_rand($rooms);
 			$possibleRooms[] = $room;
-			$this->addReservationRoom($reservation, $room);
+			$this->addAccommodationRoom($accommodation, $room);
 		}
 		$persons = $this->pushPersons(300);
 		$payingPerson = array_rand($persons);
@@ -37,7 +37,7 @@ class TestDatabase
 		$payment = $this->createPayment($paymentType, $payingPerson);
 		$personAccounts = array();
 		foreach ($persons as $person) {
-			$personAccount = $this->createPersonAccount($payment, $reservation, $person);
+			$personAccount = $this->createPersonAccount($payment, $accommodation, $person);
 			$this->addPersonRoom($person, $room);
 			$personAccounts[] = $personAccount;
 		}
@@ -51,7 +51,7 @@ class TestDatabase
 
 	}
 
-	public function addReservationRoom($reservation, $room) {
+	public function addAccommodationRoom($accommodation, $room) {
 
 	}
 
@@ -71,10 +71,10 @@ class TestDatabase
 
 	}
 
-	public function createReservation() {
+	public function createAccommodation() {
 		$data = array();
-		$reservation = $this->db->table('reservation')->insert($data);
-		return $reservation;
+		$accommodation = $this->db->table('accommodation')->insert($data);
+		return $accommodation;
 	}
 
 	public function pushPersons($count) {

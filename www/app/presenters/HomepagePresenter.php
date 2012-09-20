@@ -18,7 +18,7 @@ class HomepagePresenter extends BasePresenter
 	}
 
 	public function renderTest() {
-		$this->testDatabase->testReservation();
+		$this->testDatabase->testAccommodation();
 	}
 
 }
