@@ -21,7 +21,6 @@ class TestDatabase
 
 
 	public function prepareData() {
-		set_time_limit(100);
 		$hotel = $this->pushHotelWithProvider();
 		$paymentTypes = $this->pushPaymentTypes();
 		$rooms = $this->pushRooms(40, $hotel);
@@ -103,6 +102,7 @@ class TestDatabase
 	}
 
 	public function pushRooms($count, $hotel) {
+		$rooms = array();
 		for ($i = 0;$i < $count;$i++) {
 			$data = array(
 				'id_hotel' => $hotel['id_hotel'],
@@ -112,9 +112,9 @@ class TestDatabase
 				'floor' => rand(0,5),
 				'description' => '',
 			);
-			$this->db->table('room')->insert($data);
+			$rooms[] = $this->db->table('room')->insert($data);
 		}
-		return $this->toArray($this->db->table('room'));
+		return $rooms;
 	}
 
 	public function pushHotelWithProvider() {
@@ -133,14 +133,15 @@ class TestDatabase
 	}
 
 	public function pushPaymentTypes() {
+		$payment_types = array();
 		foreach (self::$paymentTypes as $paymentType) {
 			$data = array(
 				'name' => $paymentType,
 				'price' => 0,
 			);
-			$this->db->table('payment_type')->insert($data);
+			$payment_types[] = $this->db->table('payment_type')->insert($data);
 		}
-		return $this->toArray($this->db->table('payment_type'));
+		return $payment_types;
 	}
 
 	public function createPayment($paymentType, $person) {
@@ -162,13 +163,14 @@ class TestDatabase
 	}
 
 	public function pushPersons($count) {
+		$persons = array();
 		for ($i = 0;$i < $count;$i++) {
 			$data = array(
 				'name' => self::$names[array_rand(self::$names)],
 			);
-			$this->db->table('person')->insert($data);
+			$persons[] = $this->db->table('person')->insert($data);
 		}
-		return $this->toArray($this->db->table('person'));
+		return $persons;
 	}
 
 	public function createPersonAccount($payment, $accommodation, $person) {
