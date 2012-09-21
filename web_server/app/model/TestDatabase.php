@@ -150,7 +150,7 @@ class TestDatabase
 	public function pushPersons($count) {
 		for ($i = 0;$i < $count;$i++) {
 			$data = array(
-				'name' => self::$names[rand(0, count(self::$names)-1)],
+				'name' => self::$names[array_rand(self::$names)],
 			);
 			$this->db->table('person')->insert($data);
 		}
