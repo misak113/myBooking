@@ -19,14 +19,12 @@ class HomepagePresenter extends BasePresenter
 
 	public function renderPrepareTest() {
 		$this->testDatabase->prepareData();
-		$this->sendResponse(new \Nette\Application\Responses\TextResponse('OK'));
 		$this->sendResponse(new \Nette\Application\Responses\JsonResponse(array('status' => 'OK')));
 	}
 
 	public function renderTest() {
-		$this->testDatabase->testAccommodation();
-		$this->sendResponse(new \Nette\Application\Responses\TextResponse('OK'));
-		$this->sendResponse(new \Nette\Application\Responses\JsonResponse(array('status' => 'OK')));
+		$data = $this->testDatabase->getFreeRooms('', '', 4, 1);
+		$this->sendResponse(new \Nette\Application\Responses\JsonResponse($data));
 	}
 
 }

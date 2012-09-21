@@ -19,10 +19,6 @@ class TestDatabase
 	}
 
 
-	public function testAccommodation() {
-		$roomsInfo = $this->getFreeRooms('', '', 4);
-		_dBar($roomsInfo);
-	}
 
 	public function prepareData() {
 		$hotel = $this->pushHotelWithProvider();
@@ -47,7 +43,7 @@ class TestDatabase
 		}
 	}
 
-	public  function getFreeRooms($dateFrom, $dateTo, $count) {
+	public function getFreeRooms($dateFrom, $dateTo, $count_persons, $count_additional) {
 		$args = array();
 		$sql = "
 			SELECT
