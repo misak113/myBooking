@@ -21,6 +21,7 @@ class TestDatabase
 
 
 	public function prepareData() {
+		set_time_limit(100);
 		$hotel = $this->pushHotelWithProvider();
 		$paymentTypes = $this->pushPaymentTypes();
 		$rooms = $this->pushRooms(40, $hotel);
@@ -49,11 +50,28 @@ class TestDatabase
 			SELECT
 				*
 			FROM room
+			JOIN accommodation_has_room USING (id_room)
+			JOIN person_account_has_room USING (id_room)
 			LEFT JOIN price_season USING (id_room)
 			LEFT JOIN price_category USING (id_room)
-			LEFT JOIN room_photo USING (id_room)
+			-- LEFT JOIN room_photo USING (id_room)
+			WHERE (person_account_has_room.date_from > :date_to
+					AND accommodation_has_room.date_from > :date_to
+				OR
+					person_account_has_room.date_to < :date_from
+					AND accommodation_has_room.date_to < :date_from)
+				AND (
+					room.count_persons >= :count_persons
+					AND room.count_additional >= :count_additional
+				)
+				GROUP BY id_room
 			;
 		";
+		$args['date_to'] = $dateTo;
+		$args['date_from'] = $dateFrom;
+		$args['count_persons'] = $count_persons;
+		$args['count_additional'] = $count_additional;
+
 		$res = $this->db->queryArgs($sql, $args)->fetchAll();
 		return $res;
 	}

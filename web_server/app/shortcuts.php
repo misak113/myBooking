@@ -37,6 +37,11 @@ function _d($var)
 	foreach($args as $arg) \Nette\Diagnostics\Debugger::dump($arg);
 }
 
+function _dRet($var) {
+	return \Nette\Diagnostics\Debugger::dump($var, true);
+}
+
+
 /**
  * dump + deie
  * @param mixed $var
