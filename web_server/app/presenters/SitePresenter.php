@@ -3,7 +3,7 @@
 use Katrine\Application\BasePresenter;
 
 /**
- * Homepage presenter.
+ * Site presenter.
  */
 class SitePresenter extends BasePresenter
 {
@@ -16,7 +16,7 @@ class SitePresenter extends BasePresenter
 
 	public function renderDefault()
 	{
-		$this->template->anyVariable = 'any value';
+
 	}
 
 	public function renderPrepareTest() {
