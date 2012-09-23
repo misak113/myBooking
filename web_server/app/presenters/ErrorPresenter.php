@@ -1,7 +1,8 @@
 <?php
 
-use Nette\Diagnostics\Debugger,
-	Nette\Application as NA;
+use Nette\Diagnostics\Debugger;
+use Nette\Application as NA;
+use Katrine\Application\BasePresenter;
 
 
 

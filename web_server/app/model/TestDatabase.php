@@ -1,11 +1,13 @@
 <?php
 use Nette\Database\Connection;
 use \PDOException;
+use Katrine\Application\BaseModel;
+
 /**
  * @author: Misak113
  * @date-created: 7.9.12
  */
-class TestDatabase
+class TestDatabase extends BaseModel
 {
 
 	/** @var Connection */

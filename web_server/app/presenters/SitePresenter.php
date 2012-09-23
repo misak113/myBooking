@@ -1,9 +1,11 @@
 <?php
 
+use Katrine\Application\BasePresenter;
+
 /**
  * Homepage presenter.
  */
-class HomepagePresenter extends BasePresenter
+class SitePresenter extends BasePresenter
 {
 	/** @var TestDatabase */
 	protected $testDatabase;

@@ -1,12 +1,13 @@
 <?php
 
 use Nette\Security as NS;
+use Katrine\Application\BaseModel;
 
 
 /**
  * Users authenticator.
  */
-class Authenticator extends Nette\Object implements NS\IAuthenticator
+class Authenticator extends BaseModel implements NS\IAuthenticator
 {
 	/** @var Nette\Database\Connection */
 	private $database;

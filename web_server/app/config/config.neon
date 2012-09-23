@@ -27,9 +27,12 @@ common:
 
 
 	services:
-		authenticator: Authenticator
+# Services
 
+
+# Models
 		testDatabase: TestDatabase
+		authenticator: Authenticator
 
 
 	factories:

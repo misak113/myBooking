@@ -1,7 +1,8 @@
 <?php
 
-use Nette\Application\UI,
-	Nette\Security as NS;
+use Nette\Application\UI;
+use Nette\Security as NS;
+use Katrine\Application\BasePresenter;
 
 
 /**
